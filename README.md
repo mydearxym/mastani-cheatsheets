@@ -1,4 +1,4 @@
 # mastani-cheatsheets
 
-inspired by (devhints.io)[https://devhints.io/]
+inspired by [devhints.io](https://devhints.io/)
 
