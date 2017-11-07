@@ -440,9 +440,6 @@ l |> flatten(tail)
 
 Also see [Enum](#enum).
 
-### todo
-todo
-
 {{ ::group:: }}
 ## Enum
 {{ ::cards-header:: }}
@@ -564,9 +561,7 @@ end
 ```
 
 See: [Structs](http://elixir-lang.org/getting-started/structs.html)
-{{ ::card-item:: }}
-### todo
-todo
+
 {{ ::group:: }}
 ## Protocols
 {{ ::cards-header:: }}
