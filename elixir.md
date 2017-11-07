@@ -440,7 +440,6 @@ l |> flatten(tail)
 
 Also see [Enum](#enum).
 
-{{ ::card-item:: }}
 ### todo
 todo
 
