@@ -1,5 +1,7 @@
 
-## Getting started
+## basic types
+
+{{ ::cards-header:: }}
 
 ### Hello world
 
@@ -19,12 +21,14 @@ Greeter.greet("world")
 elixir hello.exs
 # Hello, world!
 ```
+{{ ::card-item:: }}
 
 ### Variables
 
 ```elixir
 age = 23
 ```
+{{ ::card-item:: }}
 
 ### Maps
 
@@ -38,6 +42,7 @@ user = %{
 ```elixir
 IO.puts "Hello, " <> user.name
 ```
+{{ ::card-item:: }}
 
 ### Lists
 
@@ -50,6 +55,7 @@ Enum.map(user, fn user ->
   IO.puts "Hello " <> user
 end)
 ```
+{{ ::card-item:: }}
 
 ### Piping
 
@@ -59,12 +65,15 @@ source
 |> print()
 ```
 
+
 ```elixir
 # Same as:
 print(transform(source, :hello))
 ```
 
 These two are equivalent.
+
+{{ ::card-item:: }}
 
 ### Pattern matching
 
@@ -75,6 +84,8 @@ user = %{name: "Tom", age: 23}
 
 This sets `username` to `"Tom"`.
 
+{{ ::card-item:: }}
+
 ### Pattern matching in functions
 
 ```elixir
@@ -84,11 +95,13 @@ end
 
 user = %{name: "Tom", age: 23}
 ```
-
 Pattern matching works in function parameters too.
 
-Control flow
-------------
+{{ ::group:: }}
+
+## Control flow
+
+{{ ::cards-header:: }}
 
 ### If
 
@@ -99,6 +112,7 @@ else
   "This will"
 end
 ```
+{{ ::card-item:: }}
 
 ### Cond
 
@@ -112,6 +126,7 @@ cond do
     "But I will (this is essentially an else)"
 end
 ```
+{{ ::card-item:: }}
 
 ### Errors
 
@@ -124,9 +139,10 @@ after
   IO.puts("I'm the after clause.")
 end
 ```
+{{ ::group:: }}
 
 ## Types
-
+{{ ::cards-header:: }}
 ### Primitives
 
 | Sample                  | Type            |
@@ -149,6 +165,8 @@ end
 | `%{a: "hello"}`         | Map             |
 | `%MyStruct{a: "hello"}` | Struct          |
 | `fn -> ... end`         | Function        |
+
+{{ ::card-item:: }}
 
 ### Type checks
 
@@ -176,6 +194,7 @@ is_pid/1
 is_port/1
 is_reference/1
 ```
+{{ ::card-item:: }}
 
 ### Operators
 
@@ -186,9 +205,10 @@ left ++ right   # concat lists
 left <> right   # concat string/binary
 left =~ right   # regexp
 ```
+{{ ::group:: }}
 
-Modules
--------
+## Modules
+{{ ::cards-header:: }}
 
 ### Importing
 
@@ -205,7 +225,7 @@ import Redux, only: :macros
 
 import Foo.{Bar, Baz}
 ```
-
+{{ ::card-item:: }}
 ### Aliases
 
 ```elixir
@@ -214,9 +234,9 @@ alias Foo.Bar   # same as above
 
 alias Foo.{Bar, Baz}
 ```
-
+{{ ::group:: }}
 ## String
-
+{{ ::cards-header:: }}
 ### Functions
 
 ```elixir
@@ -225,14 +245,14 @@ import String
 
 ```elixir
 str = "hello"
-str |> length()        # 鈫� 5
-str |> codepoints()    # 鈫� ["h", "e", "l", "l", "o"]
-str |> slice(2..-1)    # 鈫� "llo"
-str |> split(" ")      # 鈫� ["hello"]
-str |> capitalize()    # 鈫� "Hello"
+str |> length()        # → 5
+str |> codepoints()    # → ["h", "e", "l", "l", "o"]
+str |> slice(2..-1)    # → "llo"
+str |> split(" ")      # → ["hello"]
+str |> capitalize()    # → "Hello"
 str |> match(regex)
 ```
-
+{{ ::card-item:: }}
 ### Inspecting objects
 
 ```elixir
@@ -241,9 +261,9 @@ inspect(object, opts \\ [])
 ```elixir
 value |> IO.inspect()
 ```
-
+{{ ::group:: }}
 ## Numbers
-
+{{ ::cards-header:: }}
 ### Operations
 
 ```elixir
@@ -252,83 +272,79 @@ round(n)
 rem(a, b)   # remainder (modulo)
 div(a, b)   # integer division
 ```
-
+{{ ::card-item:: }}
 ### Float
 
 ```elixir
 import Float
 ```
-{: .-setup}
 
 ```elixir
 n = 10.3
 ```
-{: .-setup}
 
 ```elixir
-n |> ceil()            # 鈫� 11.0
-n |> ceil(2)           # 鈫� 11.30
-n |> to_string()       # 鈫� "1.030000+e01"
+n |> ceil()            # → 11.0
+n |> ceil(2)           # → 11.30
+n |> to_string()       # → "1.030000+e01"
 n |> to_string([decimals: 2, compact: true])
 ```
 
 ```elixir
-Float.parse("34")  # 鈫� { 34.0, "" }
+Float.parse("34")  # → { 34.0, "" }
 ```
-
+{{ ::card-item:: }}
 ### Integer
 
 ```elixir
 import Integer
 ```
-{: .-setup}
 
 ```elixir
 n = 12
 ```
-{: .-setup}
 
 ```elixir
-n |> digits()         # 鈫� [1, 2]
-n |> to_char_list()   # 鈫� '12'
-n |> to_string()      # 鈫� "12"
+n |> digits()         # → [1, 2]
+n |> to_char_list()   # → '12'
+n |> to_string()      # → "12"
 n |> is_even()
 n |> is_odd()
 ```
 
 ```elixir
 # Different base:
-n |> digits(2)        # 鈫� [1, 1, 0, 0]
-n |> to_char_list(2)  # 鈫� '1100'
-n |> to_string(2)     # 鈫� "1100"
+n |> digits(2)        # → [1, 1, 0, 0]
+n |> to_char_list(2)  # → '1100'
+n |> to_string(2)     # → "1100"
 ```
 
 ```elixir
-parse("12")           # 鈫� {12, ""}
-undigits([1, 2])      # 鈫� 12
+parse("12")           # → {12, ""}
+undigits([1, 2])      # → 12
 ```
-
+{{ ::card-item:: }}
 ### Type casting
 
 ```elixir
-Float.parse("34.1")    # 鈫� {34.1, ""}
-Integer.parse("34")    # 鈫� {34, ""}
+Float.parse("34.1")    # → {34.1, ""}
+Integer.parse("34")    # → {34, ""}
 ```
 
 ```elixir
-Float.to_string(34.1)  # 鈫� "3.4100e+01"
-Float.to_string(34.1, [decimals: 2, compact: true])  # 鈫� "34.1"
+Float.to_string(34.1)  # → "3.4100e+01"
+Float.to_string(34.1, [decimals: 2, compact: true])  # → "34.1"
 ```
-
+{{ ::group:: }}
 ## Map
-
+{{ ::cards-header:: }}
 ### Defining
 
 ```elixir
 m = %{name: "hi"}       # atom keys (:name)
 m = %{"name" => "hi"}   # string keys ("name")
 ```
-
+{{ ::card-item:: }}
 ### Updating
 
 ```elixir
@@ -340,7 +356,7 @@ m = %{m | name: "yo"}  # key must exist
 ```
 
 ```elixir
-m |> put(:id, 2)      # 鈫� %{id: 2, name: "hi"}
+m |> put(:id, 2)      # → %{id: 2, name: "hi"}
 m |> put_new(:id, 2)  # only if `id` doesn't exist (`||=`)
 ```
 
@@ -353,29 +369,29 @@ m |> update(:a, fun a -> a + 1 end)
 
 ```elixir
 m |> get_and_update(:a, &(&1 || "default"))
-# 鈫� {old, new}
+# → {old, new}
 ```
-
+{{ ::card-item:: }}
 ### Deleting
 
 ```elixir
-m |> delete(:name)  # 鈫� %{}
-m |> pop(:name)     # 鈫� {"John", %{}}
+m |> delete(:name)  # → %{}
+m |> pop(:name)     # → {"John", %{}}
 ```
-
+{{ ::card-item:: }}
 ### Reading
 
 ```elixir
-m |> get(:id)       # 鈫� 1
-m |> keys()         # 鈫� [:id, :name]
-m |> values()       # 鈫� [1, "hi"]
+m |> get(:id)       # → 1
+m |> keys()         # → [:id, :name]
+m |> values()       # → [1, "hi"]
 ```
 
 ```elixir
-m |> to_list()      # 鈫� [id: 1, name: "hi"]
-                    # 鈫� [{:id, 1}, {:name, "hi"}]
+m |> to_list()      # → [id: 1, name: "hi"]
+                    # → [{:id, 1}, {:name, "hi"}]
 ```
-
+{{ ::card-item:: }}
 ### Deep
 
 ```elixir
@@ -386,16 +402,18 @@ put_in(map[:b][:c], "Banana")    # via macros
 ```elixir
 get_and_update_in(users, ["john", :age], &{&1, &1 + 1})
 ```
-
+{{ ::card-item:: }}
 ### Constructing from lists
 
 ```elixir
 Map.new([{:b, 1}, {:a, 2}])
 Map.new([a: 1, b: 2])
-Map.new([:a, :b], fn x -> {x, x} end)  # 鈫� %{a: :a, b: :b}
+Map.new([:a, :b], fn x -> {x, x} end)  # → %{a: :a, b: :b}
 ```
-
+{{ ::group:: }}
 ## List
+{{ ::cards-header:: }}
+### todo
 
 ```elixir
 import List
@@ -422,34 +440,35 @@ l |> flatten(tail)
 
 Also see [Enum](#enum).
 
+{{ ::card-item:: }}
+### todo
+todo
 
+{{ ::group:: }}
 ## Enum
-
+{{ ::cards-header:: }}
 ### Usage
 
 ```elixir
 import Enum
 ```
-{: .-setup}
 
 ```elixir
 list = [:a, :b, :c]
 ```
-{: .-setup}
 
 ```elixir
-list |> at(0)         # 鈫� :a
-list |> count()       # 鈫� 3
-list |> empty?()      # 鈫� false
-list |> any?()        # 鈫� true
+list |> at(0)         # → :a
+list |> count()       # → 3
+list |> empty?()      # → false
+list |> any?()        # → true
 ```
 
 ```elixir
-list |> concat([:d])  # 鈫� [:d]
+list |> concat([:d])  # → [:d]
 ```
 
-Also, consider streams instead.
-
+{{ ::card-item:: }}
 ### Map/reduce
 
 ```elixir
@@ -465,15 +484,14 @@ list |> empty?(fn)
 [1, 2, 3, 4]
 |> Enum.reduce(0, fn(x, acc) -> x + acc end)
 ```
-
+{{ ::group:: }}
 ## Tuple
-
+{{ ::cards-header:: }}
 ### Tuples
 
 ```elixir
 import Tuple
 ```
-{: .-setup}
 
 ```elixir
 t = { :a, :b }
@@ -484,7 +502,7 @@ t |> elem(1)    # like tuple[1]
 t |> put_elem(index, value)
 t |> tuple_size()
 ```
-
+{{ ::card-item:: }}
 ### Keyword lists
 
 ```elixir
@@ -495,18 +513,18 @@ list[:name]
 ```elixir
 # For string-keyed keyword lists
 list = [{"size", 2}, {"type", "shoe"}]
-List.keyfind(list, "size", 0)  # 鈫� {"size", 2}
+List.keyfind(list, "size", 0)  # → {"size", 2}
 ```
-
+{{ ::group:: }}
 ## Functions
-
+{{ ::cards-header:: }}
 ### Lambdas
 
 ```elixir
 square = fn n -> n*n end
 square.(20)
 ```
-
+{{ ::card-item:: }}
 ### & syntax
 
 ```elixir
@@ -515,7 +533,7 @@ square.(20)
 
 square = &Math.square/1
 ```
-
+{{ ::card-item:: }}
 ### Running
 
 ```elixir
@@ -523,7 +541,7 @@ fun.(args)
 apply(fun, args)
 apply(module, fun, args)
 ```
-
+{{ ::card-item:: }}
 ### Function heads
 
 ```elixir
@@ -531,9 +549,9 @@ def join(a, b \\ nil)
 def join(a, b) when is_nil(b) do: a
 def join(a, b) do: a <> b
 ```
-
+{{ ::group:: }}
 ## Structs
-
+{{ ::cards-header:: }}
 ### Structs
 
 ```elixir
@@ -543,13 +561,16 @@ end
 
 %User{name: "John", age: 20}
 
-%User{}.struct  # 鈫� User
+%User{}.struct  # → User
 ```
 
 See: [Structs](http://elixir-lang.org/getting-started/structs.html)
-
+{{ ::card-item:: }}
+### todo
+todo
+{{ ::group:: }}
 ## Protocols
-
+{{ ::cards-header:: }}
 ### Defining protocols
 
 ```elixir
@@ -565,9 +586,9 @@ defimpl Blank, for: List do
   def blank?(_), do: false
 end
 
-Blank.blank?([])  # 鈫� true
+Blank.blank?([])  # → true
 ```
-
+{{ ::card-item:: }}
 ### Any
 
 ```elixir
@@ -578,14 +599,15 @@ defmodule User do
   defstruct name: ""
 end
 ```
-
+{{ ::card-item:: }}
 ### Examples
 
 - `Enumerable` and `Enum.map()`
 - `Inspect` and `inspect()`
 
+{{ ::group:: }}
 ## Comprehensions
-
+{{ ::cards-header:: }}
 ### For
 
 ```elixir
@@ -595,20 +617,20 @@ for n <- 1..4, do: n * n
 
 ```elixir
 for {key, val} <- %{a: 10, b: 20}, do: val
-# 鈫� [10, 20]
+# → [10, 20]
 ```
 
 ```elixir
 for {key, val} <- %{a: 10, b: 20}, into: %{}, do: {key, val*val}
 ```
-
+{{ ::card-item:: }}
 ### Conditions
 
 ```elixir
 for n <- 1..10, rem(n, 2) == 0, do: n
-# 鈫� [2, 4, 6, 8, 10]
+# → [2, 4, 6, 8, 10]
 ```
-
+{{ ::card-item:: }}
 ### Complex
 
 ```elixir
@@ -619,9 +641,9 @@ for dir <- dirs,
   IO.puts(file)
 end
 ```
-
+{{ ::group:: }}
 ## Misc
-
+{{ ::cards-header:: }}
 ### Metaprogramming
 
 ```elixir
@@ -639,7 +661,7 @@ def on_def(_env, kind, name, args, guards, body)
 @on_load :load_check
 def load_check
 ```
-
+{{ ::card-item:: }}
 ### Regexp
 
 ```elixir
@@ -647,7 +669,7 @@ exp = ~r/hello/
 exp = ~r/hello/i
 "hello world" =~ exp
 ```
-
+{{ ::card-item:: }}
 ### Sigils
 
 ```elixir
@@ -660,7 +682,7 @@ exp = ~r/hello/i
 
 Allowed chars: `/` `|` `"` `'` `(` `[` `{` `<` `"""`.
 See: [Sigils](http://elixir-lang.org/getting-started/sigils.html)
-
+{{ ::card-item:: }}
 ### Type specs
 
 ```elixir
@@ -672,7 +694,7 @@ See: [Sigils](http://elixir-lang.org/getting-started/sigils.html)
 
 Useful for [dialyzer](http://www.erlang.org/doc/man/dialyzer.html).
 See: [Typespecs](http://elixir-lang.org/getting-started/typespecs-and-behaviours.html)
-
+{{ ::card-item:: }}
 ### Behaviours
 
 ```elixir
@@ -692,7 +714,3 @@ end
 ```
 
 See: [Module](http://elixir-lang.org/docs/stable/elixir/Module.html)
-
-## References
-
-- [Learn Elixir in Y minutes](https://learnxinyminutes.com/docs/elixir/)
