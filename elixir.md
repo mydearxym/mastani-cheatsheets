@@ -413,7 +413,6 @@ Map.new([:a, :b], fn x -> {x, x} end)  # → %{a: :a, b: :b}
 {{ ::group:: }}
 ## List
 {{ ::cards-header:: }}
-### todo
 
 ```elixir
 import List
