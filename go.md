@@ -1,5 +1,7 @@
 
-## Getting started
+## basic types
+
+{{ ::cards-header:: }}
 
 ### Hello world
 
@@ -26,6 +28,8 @@ $ go build
 
 Or try it out in the [Go repl](https://repl.it/languages/go), or [A Tour of Go](https://tour.golang.org/welcome/1).
 
+{{ ::card-item:: }}
+
 ### Variables
 
 #### Variable declaration
@@ -41,6 +45,8 @@ msg = "Hello"
 msg := "Hello"
 ```
 
+{{ ::card-item:: }}
+
 ### Constants
 
 ```go
@@ -51,8 +57,8 @@ Constants can be character, string, boolean, or numeric values.
 
 See: [Constants](https://tour.golang.org/basics/15)
 
-## Basic types
 
+{{ ::card-item:: }}
 ### Strings
 
 ```go
@@ -66,6 +72,7 @@ string`
 
 Strings are of type `string`.
 
+{{ ::card-item:: }}
 ### Numbers
 
 #### Typical types
@@ -83,6 +90,7 @@ num := byte('a')  // byte (alias for uint8)
 var u uint = 7        // uint (unsigned)
 var p float32 = 22.7  // 32-bit float
 ```
+{{ ::card-item:: }}
 
 ### Arrays
 
@@ -93,6 +101,7 @@ numbers := [...]int{0, 0, 0, 0, 0}
 
 Arrays have a fixed size.
 
+{{ ::card-item:: }}
 ### Slices
 
 ```go
@@ -105,6 +114,7 @@ slice := []byte("Hello")
 
 Slices have a dynamic size, unlike arrays.
 
+{{ ::card-item:: }}
 ### Pointers
 
 ```go
@@ -125,6 +135,7 @@ Pointers point to a memory location of a variable. Go is fully garbage-collected
 
 See: [Pointers](https://tour.golang.org/moretypes/1)
 
+{{ ::card-item:: }}
 ### Type conversions
 
 ```go
@@ -135,7 +146,9 @@ u := uint(i)
 
 See: [Type conversions](https://tour.golang.org/basics/13)
 
+{{ ::group:: }}
 ## Flow control
+{{ ::cards-header:: }}
 
 ### Conditional
 
@@ -150,7 +163,7 @@ if day == "sunday" || day == "saturday" {
 ```
 
 See: [If](https://tour.golang.org/flowcontrol/5)
-
+{{ ::card-item:: }}
 ### Statements in if
 
 ```go
@@ -163,6 +176,7 @@ A condition in an `if` statement can be preceded with a statement before a `;`.
 
 See: [If with a short statement](https://tour.golang.org/flowcontrol/6)
 
+{{ ::card-item:: }}
 ### Switch
 
 ```go
@@ -181,7 +195,9 @@ switch day {
 
 See: [Switch](https://github.com/golang/go/wiki/Switch)
 
+{{ ::group:: }}
 ## Functions
+{{ ::cards-header:: }}
 
 ### Lambdas
 
@@ -193,6 +209,7 @@ myfunc := func() bool {
 
 Functions are first class objects.
 
+{{ ::card-item:: }}
 ### Multiple return types
 
 ```go
@@ -205,7 +222,7 @@ func getMessage() (a string, b string) {
 }
 ```
 
-
+{{ ::card-item:: }}
 ### Named return values
 
 ```go
@@ -220,7 +237,9 @@ By defining the return value names in the signature, a `return` (no args) will r
 
 See: [Named return values](https://tour.golang.org/basics/7)
 
+{{ ::group:: }}
 ## Packages
+{{ ::cards-header:: }}
 
 ### Importing
 
@@ -240,6 +259,7 @@ Both are the same.
 
 See: [Importing](https://tour.golang.org/basics/1)
 
+{{ ::card-item:: }}
 ### Aliases
 
 ```go
@@ -250,6 +270,7 @@ import r "math/rand"
 r.Intn()
 ```
 
+{{ ::card-item:: }}
 ### Exporting names
 
 ```go
@@ -262,6 +283,7 @@ Exported names begin with capital letters.
 
 See: [Exported names](https://tour.golang.org/basics/3)
 
+{{ ::card-item:: }}
 ### Packages
 
 ```go
@@ -270,7 +292,10 @@ package hello
 
 Every package file has to start with `package`.
 
+{{ ::group:: }}
+
 ## Concurrency
+{{ ::cards-header:: }}
 
 ### Goroutines
 
@@ -302,6 +327,7 @@ Channels are concurrency-safe communication objects, used in goroutines.
 
 See: [Goroutines](https://tour.golang.org/concurrency/1), [Channels](https://tour.golang.org/concurrency/2)
 
+{{ ::card-item:: }}
 ### Buffered channels
 
 ```go
@@ -316,6 +342,8 @@ ch <- 3
 Buffered channels limit the amount of messages it can keep.
 
 See: [Buffered channels](https://tour.golang.org/concurrency/3)
+
+{{ ::card-item:: }}
 
 ### Closing channels
 
@@ -344,8 +372,11 @@ v, ok := <- ch
 
 See: [Range and close](https://tour.golang.org/concurrency/4)
 
+{{ ::group:: }}
+
 ## Error control
 
+{{ ::cards-header:: }}
 ### Defer
 
 ```go
@@ -360,6 +391,7 @@ The arguments are evaluated immediately, but the function call is not ran until 
 
 See: [Defer, panic and recover](https://blog.golang.org/defer-panic-and-recover)
 
+{{ ::card-item:: }}
 ### Deferring functions
 
 ```go
@@ -373,7 +405,9 @@ func main() {
 
 Lambdas are better suited for defer blocks.
 
+{{ ::group:: }}
 ## Structs
+{{ ::cards-header:: }}
 
 ### Defining
 
@@ -394,6 +428,7 @@ func main() {
 
 See: [Structs](https://tour.golang.org/moretypes/2)
 
+{{ ::card-item:: }}
 ### Literals
 
 ```go
@@ -412,6 +447,7 @@ v := Vertex{X: 1}
 
 You can also put field names.
 
+{{ ::card-item:: }}
 ### Pointers to structs
 
 ```go
@@ -421,7 +457,9 @@ v.X = 2
 
 Doing `v.X` is the same as doing `(*v).X`, when `v` is a pointer.
 
+{{ ::group:: }}
 ## Methods
+{{ ::cards-header:: }}
 
 ### Receivers
 
@@ -446,6 +484,7 @@ There are no classes, but you can define functions with _receivers_.
 
 See: [Methods](https://tour.golang.org/methods/1)
 
+{{ ::card-item:: }}
 ### Mutation
 
 ```go
@@ -464,6 +503,8 @@ v.Scale(0.5)
 By defining your receiver as a pointer (`*Vertex`), you can do mutations.
 
 See: [Pointer receivers](https://tour.golang.org/methods/4)
+
+{{ ::group:: }}
 
 ## References
 
