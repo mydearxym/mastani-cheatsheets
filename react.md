@@ -477,27 +477,34 @@ import PropTypes from 'prop-types'
 
 See: [Typechecking with PropTypes](https://reactjs.org/docs/typechecking-with-proptypes.html)
 
-| `any`                     | Anything                             |
-
 #### Basic
 
-| `string`                  |                                      |
-| `number`                  |                                      |
+| type | Description |
+| --- | --- |
+| `any`                     | Anything                             |
+| `string`                  | String                                 |
+| `number`                  | Number                                 |
 | `func`                    | Function                             |
 | `bool`                    | True or false                        |
 
 #### Enum
 
+| type | Description |
+| --- | --- |
 | `oneOf`_(any)_            | Enum types                           |
 | `oneOfType`_(type array)_ | Union                                |
 
 #### Array
 
-| `array`                   |                                      |
-| `arrayOf`_(...)_          |                                      |
+| type | Description |
+| --- | --- |
+| `array`                   | Array                                |
+| `arrayOf`_(...)_          | ---                                  |
 
 #### Object
 
+| type | Description |
+| --- | --- |
 | `object`                  |                                      |
 | `objectOf`_(...)_         | Object with values of a certain type |
 | `instanceOf`_(...)_       | Instance of a class                  |
@@ -505,11 +512,15 @@ See: [Typechecking with PropTypes](https://reactjs.org/docs/typechecking-with-pr
 
 #### Elements
 
+| type | Description |
+| --- | --- |
 | `element`                 | React element                        |
 | `node`                    | DOM node                             |
 
 #### Required
 
+| type | Description |
+| --- | --- |
 | `(···).isRequired`        | Required                             |
 
 {{ ::card-item:: }}
@@ -602,7 +613,6 @@ MyCo.propTypes = {
 ## Also see
 {{ ::cards-header:: }}
 
-### links
 
 * [React website](https://reactjs.org) _(reactjs.org)_
 * [React cheatsheet](https://reactcheatsheet.com/) _(reactcheatsheet.com)_
