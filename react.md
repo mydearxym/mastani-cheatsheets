@@ -611,8 +611,6 @@ MyCo.propTypes = {
 
 {{ ::group:: }}
 ## Also see
-{{ ::cards-header:: }}
-
 
 * [React website](https://reactjs.org) _(reactjs.org)_
 * [React cheatsheet](https://reactcheatsheet.com/) _(reactcheatsheet.com)_
