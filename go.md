@@ -504,9 +504,11 @@ By defining your receiver as a pointer (`*Vertex`), you can do mutations.
 
 See: [Pointer receivers](https://tour.golang.org/methods/4)
 
-{{ ::card-item:: }}
+{{ ::group:: }}
+## References
+{{ ::cards-header:: }}
 
-### References
+### links
 
 - [A tour of Go](https://tour.golang.org/welcome/1) _(tour.golang.org)_
 - [Golang wiki](https://github.com/golang/go/wiki/) _(github.com)_
